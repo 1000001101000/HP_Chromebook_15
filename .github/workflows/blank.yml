@@ -8,6 +8,11 @@ jobs:
     container: 'debian:10'
     
     steps: 
-    - name: uname
-      run: uname -a
+    - name: update apt
+      run: apt-get update
+      
+    - name: kernel version check
+      run: apt-cache search linux-source
+    
+    
       
