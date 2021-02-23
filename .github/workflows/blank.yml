@@ -5,7 +5,7 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: 'debian:10'
+    container: 'debian:11'
     
     steps: 
     - name: update apt
