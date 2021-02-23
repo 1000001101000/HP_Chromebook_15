@@ -14,5 +14,6 @@ jobs:
     - name: install needed packages
       run: apt-get -y install build-essential git gawk nano libncurses5-dev lsb-release kmod cpio libssl-dev rsync apt-transport-https gnupg wget reprepro equivs curl apt-utils linux-source linux-image-amd64
     
-    
+    - name: grab kernel version 
+      run: ls -rt /boot | grep config | tail -n 1
       
