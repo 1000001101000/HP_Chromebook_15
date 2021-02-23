@@ -11,8 +11,8 @@ jobs:
     - name: update apt
       run: apt-get update
       
-    - name: kernel version check
-      run: apt-cache search linux-image
+    - name: install needed packages
+      run: apt-get -y install build-essential git gawk nano libncurses5-dev lsb-release kmod cpio libssl-dev rsync apt-transport-https gnupg wget reprepro equivs curl apt-utils linux-source linux-image-amd64
     
     
       
