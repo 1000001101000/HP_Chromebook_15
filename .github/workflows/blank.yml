@@ -12,7 +12,7 @@ jobs:
       run: apt-get update
       
     - name: kernel version check
-      run: apt-cache search linux-source
+      run: apt-cache search linux-image
     
     
       
