@@ -5,7 +5,7 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: 'debian:11'
+    container: 'debian:bullseye'
     
     steps: 
     - name: update apt
