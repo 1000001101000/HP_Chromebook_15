@@ -31,8 +31,12 @@ jobs:
     - name: copy config into source
       run: cp "$(ls /boot/conf* | tail -n 1)" linux-source-${{env.sver}}/.config
       
-    - name: ls
-      run: cd linux-source-${{env.sver}}/; ls -a
+    - name: add tpm to config
+      run: cd linux-source-${{env.sver}}/; echo "CONFIG_TCG_TIS_SPI_CR50=y" >> .config
+      
+     - name: make oldconfig
+      run: cd linux-source-${{env.sver}}/; make oldconfig
+    
       
       
       
