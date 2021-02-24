@@ -8,6 +8,7 @@ jobs:
     container: 'debian:bullseye'
     env:
       kver: ""
+      sver: ""
     
     steps: 
     - name: update apt
@@ -18,19 +19,22 @@ jobs:
     
     - name: grab kernel source version 
       run: echo "kver=$(dpkg -l | grep "ii  linux-source  " | gawk '{print $3}')" >> $GITHUB_ENV
+    
+    - name: grab kernel short version 
+      run: echo "sver=$(dpkg -l | grep "linux-source-" | gawk '{print $2}')" >> $GITHUB_ENV
       
     ### check version against list, quit if we already built it  
       
     - name: unpack kernel source
-      run: tar xf /usr/src/$(dpkg -l | grep "linux-source-" | gawk '{print $2}').tar.xz
+      run: tar xf /usr/src/${{env.sver}}.tar.xz
       
     - name: copy config into source
-      run: cp /boot/config-${{env.kver}}-amd64
-      working-directory: "~/linux-source-${{env.kver}}/"
+      run: cp /boot/config-${{env.kver}}*-amd64 .config
+      working-directory: "~/linux-source-${{env.sver}}/"
       
     - name: ls
       run: ls -a
-      working-directory: "~/linux-source-${{env.kver}}/"
+      working-directory: "~/linux-source-${{env.sver}}/"
       
       
       
