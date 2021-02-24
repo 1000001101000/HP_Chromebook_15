@@ -24,8 +24,14 @@ jobs:
     - name: unpack kernel source
       run: tar xf /usr/src/$(dpkg -l | grep "linux-source-" | gawk '{print $2}').tar.xz
       
+    - name: copy config into source
+      run: cp /boot/config-${{kver}}-amd64
+      working-directory: "~/linux-source-${{kver}}/"
+      
     - name: ls
-      run: ls -l
+      run: ls -a
+      working-directory: "~/linux-source-${{kver}}/"
+      
       
       
       
