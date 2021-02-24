@@ -15,7 +15,7 @@ jobs:
       run: apt-get update
       
     - name: install needed packages
-      run: apt-get -y install build-essential git gawk nano libncurses5-dev lsb-release kmod cpio libssl-dev rsync apt-transport-https gnupg wget reprepro equivs curl apt-utils linux-source linux-image-amd64
+      run: apt-get -y install build-essential git gawk nano libncurses5-dev lsb-release kmod cpio libssl-dev rsync apt-transport-https gnupg wget reprepro equivs curl apt-utils linux-source linux-image-amd64 libelf-dev
     
     - name: grab kernel source version 
       run: echo "kver=$(dpkg -l | grep "ii  linux-source  " | gawk '{print $3}')" >> $GITHUB_ENV
