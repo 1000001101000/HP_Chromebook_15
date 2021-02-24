@@ -21,7 +21,7 @@ jobs:
       run: echo "kver=$(dpkg -l | grep "ii  linux-source  " | gawk '{print $3}')" >> $GITHUB_ENV
     
     - name: grab kernel short version 
-      run: echo "sver=$(dpkg -l | grep "linux-source-" | gawk -F- '{print $3}')" >> $GITHUB_ENV
+      run: echo "sver=$(dpkg -l | grep "linux-source-" | gawk '{print $2}' | gawk -F- '{print $3}')" >> $GITHUB_ENV
       
     ### check version against list, quit if we already built it  
       
