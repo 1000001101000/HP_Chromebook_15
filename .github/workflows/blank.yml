@@ -36,6 +36,12 @@ jobs:
       
     - name: make oldconfig
       run: cd linux-source-${{env.sver}}/; make oldconfig
+      
+    - name: make kernel package
+      run: cd linux-source-${{env.sver}}/; make -j$(nproc) ARCH=x86_64 bindeb-pkg
+      
+    - name: ls
+      run: ls
     
       
       
