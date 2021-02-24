@@ -29,12 +29,10 @@ jobs:
       run: tar xf /usr/src/linux-source-${{env.sver}}.tar.xz
       
     - name: copy config into source
-      run: cp "$(ls /boot/conf* | tail -n 1)" .config
-      working-directory: "~/linux-source-${{env.sver}}/"
+      run: cp "$(ls /boot/conf* | tail -n 1)" linux-source-${{env.sver}}/.config
       
     - name: ls
-      run: ls -a
-      working-directory: "~/linux-source-${{env.sver}}/"
+      run: cd linux-source-${{env.sver}}/; ls -a
       
       
       
