@@ -25,12 +25,12 @@ jobs:
       run: tar xf /usr/src/$(dpkg -l | grep "linux-source-" | gawk '{print $2}').tar.xz
       
     - name: copy config into source
-      run: cp /boot/config-${{kver}}-amd64
-      working-directory: "~/linux-source-${{kver}}/"
+      run: cp /boot/config-${{env.kver}}-amd64
+      working-directory: "~/linux-source-${{env.kver}}/"
       
     - name: ls
       run: ls -a
-      working-directory: "~/linux-source-${{kver}}/"
+      working-directory: "~/linux-source-${{env.kver}}/"
       
       
       
