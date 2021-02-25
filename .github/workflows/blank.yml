@@ -1,6 +1,6 @@
 name: Update kernel images
 
-on: [push]
+on: #[push]
 
 jobs:
   build:
