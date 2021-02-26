@@ -1,0 +1,73 @@
+Package: linux-headers-5.10.13
+Source: linux-5.10.13
+Version: 5.10.13-1
+Architecture: amd64
+Maintainer: root <root@757a4767bad5>
+Installed-Size: 49450
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.10.13/linux-headers-5.10.13_5.10.13-1_amd64.deb
+Size: 8060296
+SHA256: 768098367861d9e82e6b7abee075317898a239500de9151de9d5688373499cec
+SHA1: 4ac380cbcebb80be1497d0d17f5185c7bcb95641
+MD5sum: 732728010370d25898e71ecb6b371fde
+Description: Linux kernel headers for 5.10.13 on amd64
+ This package provides kernel header files for 5.10.13 on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-image-5.10.13
+Source: linux-5.10.13
+Version: 5.10.13-1
+Architecture: amd64
+Maintainer: root <root@757a4767bad5>
+Installed-Size: 299932
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.10.13/linux-image-5.10.13_5.10.13-1_amd64.deb
+Size: 52403832
+SHA256: 161ef778f6cc4c2e89da1b2b0f7c552552590d87e51143c7ace5b272ec053150
+SHA1: da3abf605462734163b99126e8afbd939f0c103e
+MD5sum: 644e99b4d0744481a6a394cc1f04544f
+Description: Linux kernel, version 5.10.13
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.10.13.
+
+Package: linux-image-hp15
+Version: 5.10.13-1
+Architecture: amd64
+Maintainer: Equivs Dummy Package Generator <root@757a4767bad5>
+Installed-Size: 9
+Depends: linux-image-5.10
+Multi-Arch: foreign
+Priority: optional
+Section: misc
+Filename: pool/main/l/linux-image-hp15/linux-image-hp15_5.10.13-1_amd64.deb
+Size: 2212
+SHA256: 21276cc21c9a8eb70a36ee71b19b3aa46d24b16407b4f95250c045629e72c470
+SHA1: 0247a9fa64a3bc9d9a2b069eee1d020c9739dff3
+MD5sum: 67a91a653c2696240bdc8d55122a695c
+Description: linux-image metapackage for custom kernels for Kaby Lake Chromebooks
+
+Package: linux-libc-dev
+Source: linux-5.10.13
+Version: 5.10.13-1
+Architecture: amd64
+Maintainer: root <root@757a4767bad5>
+Installed-Size: 5896
+Provides: linux-kernel-headers
+Multi-Arch: same
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: devel
+Filename: pool/main/l/linux-5.10.13/linux-libc-dev_5.10.13-1_amd64.deb
+Size: 1135220
+SHA256: 51fbbb32a8c22083452a3f59eb634873bd01a9f445fa5655e80f681f1cd0407b
+SHA1: 6c2eb470dd44ed808956dd1ac4a812789ac6b488
+MD5sum: 572b21f2df8a9b33fe4155627b848537
+Description: Linux support headers for userspace development
+ This package provides userspaces headers from the Linux kernel.  These headers
+ are used by the installed headers for GNU glibc and other system libraries.
+

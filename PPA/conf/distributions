@@ -1,0 +1,8 @@
+Origin: 1000001101000
+Label: Chromebook Kernel and Tools
+Suite: testing
+Codename: testing
+Architectures: amd64
+Components: main
+Description: Chromebook Kernel and Tools
+SignWith: i000001101000

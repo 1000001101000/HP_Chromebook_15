@@ -1,0 +1,20 @@
+Origin: 1000001101000
+Label: Chromebook Kernel and Tools
+Suite: testing
+Codename: testing
+Date: Fri, 26 Feb 2021 02:09:46 UTC
+Architectures: amd64
+Components: main
+Description: Chromebook Kernel and Tools
+MD5Sum:
+ 4bc141e4e7ddd73bc98904db3da708e4 2552 main/binary-amd64/Packages
+ 6d12ddb04582ead52ec4304496458996 1025 main/binary-amd64/Packages.gz
+ a600e0a6c4f06f6db84d2b7aa2fd1613 151 main/binary-amd64/Release
+SHA1:
+ 775a18e03bc3f17403c565e99194ab095fb0a5cc 2552 main/binary-amd64/Packages
+ 9aac447c5126cdc95d0c01af924a5550568f3528 1025 main/binary-amd64/Packages.gz
+ 44ed0565a11c802547fa2bc8d605dee11c186847 151 main/binary-amd64/Release
+SHA256:
+ ce4d2823640ad58fc4fa55c030557f8e2eb8f4f2565118a13b6c735b6995d044 2552 main/binary-amd64/Packages
+ dd3d66c9831d04973b2dfee86937a8f6b5113920ad2a43c3caf0e4694b64cae2 1025 main/binary-amd64/Packages.gz
+ 0625ebe87baf40d0146b70334113983cf843da742b61d69b58b2e39e215b71f9 151 main/binary-amd64/Release
