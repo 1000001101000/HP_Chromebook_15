@@ -36,19 +36,19 @@ Description: Linux kernel, version 5.10.13
  files, version: 5.10.13.
 
 Package: linux-image-hp15
-Version: 5.10-5
+Version: 5.10-6
 Architecture: amd64
-Maintainer: Equivs Dummy Package Generator <root@a98ea089402c>
+Maintainer: root <root@cb4593f2f448>
 Installed-Size: 9
 Depends: linux-image-5.10.13
 Multi-Arch: foreign
 Priority: optional
 Section: misc
-Filename: pool/main/l/linux-image-hp15/linux-image-hp15_5.10-5_amd64.deb
-Size: 2212
-SHA256: a17f7865f084007f99f467cfcd7bace91dadf48c7b0ba6444a3c6a741be89241
-SHA1: 6278f32ab72a7b59eca72b8710abf2b8fc5a5d0e
-MD5sum: 114d9de3ab1cba7decd3e61b49dc6028
+Filename: pool/main/l/linux-image-hp15/linux-image-hp15_5.10-6_amd64.deb
+Size: 2160
+SHA256: 1567cbdeb49ec82aa9c1e787ff2745ff0fb692160e90877b7e26822e33b7f742
+SHA1: 7b92662ff64084ed75a60cab62781c771bcaae9a
+MD5sum: 96147d6d8a8767c4e1cff1fb41e60266
 Description: linux-image metapackage for custom kernels for Kaby Lake Chromebooks
 
 Package: linux-libc-dev
