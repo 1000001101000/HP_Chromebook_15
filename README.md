@@ -27,4 +27,5 @@ Let me know if you have any questions or something to contribute. I don't know i
 To enable "legacy" boot to allow custom OS install:
 https://mrchromebox.tech/
 
-
+Backlight issue:
+https://bugs.chromium.org/p/chromium/issues/detail?id=997415
