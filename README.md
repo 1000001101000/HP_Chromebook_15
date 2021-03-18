@@ -29,3 +29,4 @@ https://mrchromebox.tech/
 
 Backlight issue:
 https://bugs.chromium.org/p/chromium/issues/detail?id=997415
+https://bugs.chromium.org/p/chromium/issues/detail?id=1176224&q=HP%20chromebook%2015&can=2
