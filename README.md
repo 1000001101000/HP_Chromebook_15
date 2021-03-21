@@ -9,6 +9,16 @@ I got this device at a discount and am mostly happy with it for the price and am
 ### Kernel with needed drivers
 Set up an automated script to build a custom kernel for this device based on Debian's amd64 kernel for Bullseye. So far the only change from Debian's is to enable support for the TPM. Without TPM support the device will automatically reflash the boot loader with the stock version if you allow it to suspend....which can wreck your day. 
 
+To setup my repo add install the kernel:
+```
+apt-get install -y apt-transport-https gnupg
+wget -qO - https://raw.githubusercontent.com/1000001101000/HP_Chromebook_15/master/PPA/key.GPG | apt-key add -
+echo "deb https://raw.githubusercontent.com/1000001101000/HP_Chromebook_15/master/PPA/ testing main" > /etc/apt/sources.list.d/hp15_kernel.list
+apt-get update
+apt-get install linux-image-hp15
+
+```
+
 ### Keyboard backlight
 It appears that they removed support for the keyboard backlight in the bootloader/BIOS somewhere around ChromeOS 77, even when it was supported I wasn't able to find any way to adjust it within Chrome OS.
 
