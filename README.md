@@ -7,6 +7,36 @@ So far I have:
 
 Set up an automated script to build a custom kernel for this device based on Debian's amd64 kernel for Bullseye. So far the only change from Debian's is to enable support for the TPM. Without TPM support the device will automatically reflash the boot loader with the stock version if you allow it to suspend....which can wreck your day. 
 
+Things I have done/recommend:
+
+## Keyboard backlight
+It appears that they removed support for the keyboard backlight in the bootloader/BIOS somewhere around ChromeOS 77, even when it was supported I wasn't able to find any way to adjust it within Chrome OS.
+
+I was able to make it work on my device by: 
+- downloading a ChromeOS recovery image from https://cros-updates-serving.appspot.com
+- restore ChromeOS using the recovery image (enable debug options when it asks and set a root password).
+- disable network once in ChromeOS so that it doesn't auto-update and restore the current version
+- use alt-F2 (right arrow) to connect to a terminal and disable autoupdates (remove update script from /etc/?) i'm having trouble finding the link I used.
+- restart so that you have a session with network that isn't trying to autoupdate.
+- run through the process to enable legacy boot and then install linux as normal
+
+With a working bootloader/BIOS the cros_kbd_led_backlight driver works as designed. The brightness can be set with:
+
+`echo 50 > "/sys/class/leds/chromeos::kbd_backlight/brightness"`
+
+Eventually I want to see if I can make it work without needed to downgrade the bootlaoder. I suspect this should be possible by patching the ACPI table to add back in the proper entry. Admitedly I don't have any experience with that and don't really want to reflash my device now that it's working properly.
+
+## Firefox
+The current FireFox-ESR which ships with Debian does not support Intel graphics. Disabling hardware acceleration seems to correct tearing issues. FireFox 80+ appears to have Intel graphics support and is available in Debian Unstable
+
+## Touchpad driver
+The Synaptic and other Xorg input drivers don't work very well with this touchpad (at least not with any settings that I tried). The GalliumOS folks have ported the ChromeOS driver which works much better. 
+
+You can install them by installing the DEBs for xserver-xorg-input-cmt, libgestures, and libevdevc from http://apt.galliumos.org. 
+
+At least in XFCE this appears to remove the touchpad tab from mouse settings. I'm still looking at how to restore that or how to adjust things like the typing timout via Xorg.conf or xinput. 
+
+
 
 Things I am looking into:
 
