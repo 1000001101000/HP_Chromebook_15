@@ -3,13 +3,13 @@ Custom kernel/etc for HP Kaby Lake Chromebook
 
 I got this device at a discount and am mostly happy with it for the price and am now looking at improving linux support for it however I can. 
 
-So far I have:
 
+## Things I have done/recommend:
+
+### Kernel with needed drivers
 Set up an automated script to build a custom kernel for this device based on Debian's amd64 kernel for Bullseye. So far the only change from Debian's is to enable support for the TPM. Without TPM support the device will automatically reflash the boot loader with the stock version if you allow it to suspend....which can wreck your day. 
 
-Things I have done/recommend:
-
-## Keyboard backlight
+### Keyboard backlight
 It appears that they removed support for the keyboard backlight in the bootloader/BIOS somewhere around ChromeOS 77, even when it was supported I wasn't able to find any way to adjust it within Chrome OS.
 
 I was able to make it work on my device by: 
@@ -26,10 +26,10 @@ With a working bootloader/BIOS the cros_kbd_led_backlight driver works as design
 
 Eventually I want to see if I can make it work without needed to downgrade the bootlaoder. I suspect this should be possible by patching the ACPI table to add back in the proper entry. Admitedly I don't have any experience with that and don't really want to reflash my device now that it's working properly.
 
-## Firefox
+### Firefox
 The current FireFox-ESR which ships with Debian does not support Intel graphics. Disabling hardware acceleration seems to correct tearing issues. FireFox 80+ appears to have Intel graphics support and is available in Debian Unstable
 
-## Touchpad driver
+### Touchpad driver
 The Synaptic and other Xorg input drivers don't work very well with this touchpad (at least not with any settings that I tried). The GalliumOS folks have ported the ChromeOS driver which works much better. 
 
 You can install them by installing the DEBs for xserver-xorg-input-cmt, libgestures, and libevdevc from http://apt.galliumos.org. 
@@ -37,16 +37,20 @@ You can install them by installing the DEBs for xserver-xorg-input-cmt, libgestu
 At least in XFCE this appears to remove the touchpad tab from mouse settings. I'm still looking at how to restore that or how to adjust things like the typing timout via Xorg.conf or xinput. 
 
 
+## Things I am looking into:
 
-Things I am looking into:
+### A proper keymapping that includes the numpad.
 
-Figuring out how to enable the keyboard backlight. When I bought the thing I expected I could figure this out from ChromeOS....but it doesn't work there either. As of today HP hasn't posted any GPL code for the device either. I've spent some time poking at gpios and ACPI entries but haven't had any luck yet.
+### Sound
+I think GalliumOS has the sound working with their kernel, but it does not with mine. I beleive part of the reason they've kept an older kernel/base is that something changed that makes this harder to support for these chipsets. I've read some things that make it sound like this is possible to fix, i'll look into that at somepoint.
 
-A proper keymapping that includes the numpad.
+This link has some information that might be helpful:
 
-Proper defaults for the trackpad. GalliumOS's defaults work great, Debian's were not very good. When I move from GalliumOS to Debian I'll figure out how to make it work the same on Debian and post info here in some form.
+https://github.com/GalliumOS/galliumos-distro/issues/536
 
-GalliumOS has the sound working with their kernel, but it does not with mine. I beleive part of the reason they've kept an older kernel/base is that something changed that makes this harder to support for these chipsets. I've read some things that make it sound like this is possible to fix, i'll look into that at somepoint.
+
+
+
 
 I may bundle all of the above into a Debian installer image since I've done that on other projects and have experience setting up github CI/CD jobs to keep them updated. I normally wouldn't bother for a non-embedded device like this, but getting a kernel in place that supports the TPM right away is probably worth the hassle. 
 
