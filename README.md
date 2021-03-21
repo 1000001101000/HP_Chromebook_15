@@ -44,6 +44,10 @@ You can install them by installing the DEBs for xserver-xorg-input-cmt, libgestu
 
 At least in XFCE this appears to remove the touchpad tab from mouse settings. I'm still looking at how to restore that or how to adjust things like the typing timout via Xorg.conf or xinput. 
 
+### Grub menu
+Setting the grub resolution to 1024x768 makes the best use of the screen of the modes available in the Buster version of Grub2
+`GRUB_GFXMODE=1024x768`
+
 
 ## Things I am looking into:
 
