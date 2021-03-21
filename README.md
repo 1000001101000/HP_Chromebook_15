@@ -36,8 +36,6 @@ With a working bootloader/BIOS the cros_kbd_led_backlight driver works as design
 
 Eventually I want to see if I can make it work without needed to downgrade the bootlaoder. I suspect this should be possible by patching the ACPI table to add back in the proper entry. Admitedly I don't have any experience with that and don't really want to reflash my device now that it's working properly.
 
-### Firefox
-The current FireFox-ESR which ships with Debian does not support Intel graphics. Disabling hardware acceleration seems to correct tearing issues. FireFox 80+ appears to have Intel graphics support and is available in Debian Unstable
 
 ### Touchpad driver
 The Synaptic and other Xorg input drivers don't work very well with this touchpad (at least not with any settings that I tried). The GalliumOS folks have ported the ChromeOS driver which works much better. 
