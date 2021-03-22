@@ -4,7 +4,7 @@ Custom kernel/etc for HP Kaby Lake Chromebook
 I got this device at a discount and am mostly happy with it for the price and am now looking at improving linux support for it however I can. 
 
 
-## Things I have done/recommend:
+## Things I have done/recommend
 
 ### Kernel with needed drivers
 Set up an automated script to build a custom kernel for this device based on Debian's amd64 kernel for Bullseye. So far the only change from Debian's is to enable support for the TPM. Without TPM support the device will automatically reflash the boot loader with the stock version if you allow it to suspend....which can wreck your day. 
@@ -55,9 +55,10 @@ As usual Arch has a good guide describing how to automatically enable numlock:
 
 https://wiki.archlinux.org/index.php/Activating_numlock_on_bootup
 
-## Things I am looking into:
+## Things I am looking into
 
-
+### media keys
+I still need to look at how to make the backlight/etc buttons work (rather than as function keys). I have a triggerhappy script set up to handle the keyboard backlight adjustments but a not sure if that is the right direction to go.
 
 ### Sound
 I think GalliumOS has the sound working with their kernel, but it does not with mine. I beleive part of the reason they've kept an older kernel/base is that something changed that makes this harder to support for these chipsets. I've read some things that make it sound like this is possible to fix, i'll look into that at somepoint.
@@ -66,8 +67,9 @@ This link has some information that might be helpful:
 
 https://github.com/GalliumOS/galliumos-distro/issues/536
 
+I've tried adapting the method for this device but haven't made much progress yet
 
-
+<br><br><br>
 
 
 I may bundle all of the above into a Debian installer image since I've done that on other projects and have experience setting up github CI/CD jobs to keep them updated. I normally wouldn't bother for a non-embedded device like this, but getting a kernel in place that supports the TPM right away is probably worth the hassle. 
