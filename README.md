@@ -48,10 +48,16 @@ At least in XFCE this appears to remove the touchpad tab from mouse settings. I'
 Setting the grub resolution to 1024x768 makes the best use of the screen of the modes available in the Buster version of Grub2
 `GRUB_GFXMODE=1024x768`
 
+### keyboard configuration
+The keyboard for this device works well with the "Chromebook" mapping which is available in XFCE and I suspect other window managers as well. 
+
+As usual Arch has a good guide describing how to automatically enable numlock:
+
+https://wiki.archlinux.org/index.php/Activating_numlock_on_bootup
 
 ## Things I am looking into:
 
-### A proper keymapping that includes the numpad.
+
 
 ### Sound
 I think GalliumOS has the sound working with their kernel, but it does not with mine. I beleive part of the reason they've kept an older kernel/base is that something changed that makes this harder to support for these chipsets. I've read some things that make it sound like this is possible to fix, i'll look into that at somepoint.
