@@ -57,6 +57,12 @@ https://wiki.archlinux.org/index.php/Activating_numlock_on_bootup
 
 ## Things I am looking into
 
+### Suspend to memory
+This works perfectly using my kernel under GalliumOS but is failing on Debian. I'm having trouble figuring out what the difference is, partly because switching between the two is a pain.
+
+For now I've been using suspend to idle if I need to use suspend. 
+`echo s2idle > /sys/power/mem_sleep`
+
 ### media keys
 I still need to look at how to make the backlight/etc buttons work (rather than as function keys). I have a triggerhappy script set up to handle the keyboard backlight adjustments but a not sure if that is the right direction to go.
 
