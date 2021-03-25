@@ -26,7 +26,7 @@ https://www.extremetech.com/computing/251499-major-hyper-threading-flaw-can-dest
 This can be corrected by installing the intel-microcode package and rebooting.
 
 ### intel graphics firmware
-some additional features of the graphics card can be utilized if you install additional firmware blobs
+some additional features of the graphics card can be utilized if you install additional firmware blobs (HuC,GuC,dmc). I beleive because I'm using a newer kernel this requires a newer version of the firmware-misc-nonfree which I manually installed from the debian unstable repo.
 
 ### Keyboard backlight
 It appears that they removed support for the keyboard backlight in the bootloader/BIOS somewhere around ChromeOS 77, even when it was supported I wasn't able to find any way to adjust it within Chrome OS.
@@ -73,16 +73,20 @@ For now I've been using suspend to idle if I need to use suspend.
 `echo s2idle > /sys/power/mem_sleep`
 
 ### media keys
-I still need to look at how to make the backlight/etc buttons work (rather than as function keys). I have a triggerhappy script set up to handle the keyboard backlight adjustments but a not sure if that is the right direction to go.
+I still need to look at how to make the backlight/etc buttons work (rather than as function keys). I have a triggerhappy script set up to handle the keyboard backlight adjustments but a nott sure if that is the right direction to go.
 
 ### Sound
-I think GalliumOS has the sound working with their kernel, but it does not with mine. I beleive part of the reason they've kept an older kernel/base is that something changed that makes this harder to support for these chipsets. I've read some things that make it sound like this is possible to fix, i'll look into that at somepoint.
+This requires some firmware files you need to extract from a chromos recovery image and probably some additional dev work. I'm not aware of anyone who has successfully done this for this device
 
 This link has some information that might be helpful:
 
 https://github.com/GalliumOS/galliumos-distro/issues/536
 
-I've tried adapting the method for this device but haven't made much progress yet
+I've tried adapting the method for this device but haven't made much progress yet.
+
+Personally, I just use bluetooth audio for now.
+
+It appeared hdmi audio was set up on GalliuOS, I have not yet checked if that actually worked or how to get it working on Debian. 
 
 <br><br><br>
 
