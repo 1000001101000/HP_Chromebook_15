@@ -19,6 +19,15 @@ apt-get install linux-image-hp15
 
 ```
 
+### Microcode
+I believe the CPU in this device is one that was affected by a hyperthreading bug:
+https://www.extremetech.com/computing/251499-major-hyper-threading-flaw-can-destabilize-intel-cpus-based-kaby-lake-skylake
+
+This can be corrected by installing the intel-microcode package and rebooting.
+
+### intel graphics firmware
+some additional features of the graphics card can be utilized if you install additional firmware blobs
+
 ### Keyboard backlight
 It appears that they removed support for the keyboard backlight in the bootloader/BIOS somewhere around ChromeOS 77, even when it was supported I wasn't able to find any way to adjust it within Chrome OS.
 
