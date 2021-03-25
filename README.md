@@ -28,6 +28,8 @@ This can be corrected by installing the intel-microcode package and rebooting.
 ### intel graphics firmware
 some additional features of the graphics card can be utilized if you install additional firmware blobs (HuC,GuC,dmc). I beleive because I'm using a newer kernel this requires a newer version of the firmware-misc-nonfree which I manually installed from the debian unstable repo.
 
+
+
 ### Keyboard backlight
 It appears that they removed support for the keyboard backlight in the bootloader/BIOS somewhere around ChromeOS 77, even when it was supported I wasn't able to find any way to adjust it within Chrome OS.
 
@@ -43,7 +45,7 @@ With a working bootloader/BIOS the cros_kbd_led_backlight driver works as design
 
 `echo 50 > "/sys/class/leds/chromeos::kbd_backlight/brightness"`
 
-Eventually I want to see if I can make it work without needed to downgrade the bootlaoder. I suspect this should be possible by patching the ACPI table to add back in the proper entry. Admitedly I don't have any experience with that and don't really want to reflash my device now that it's working properly.
+Eventually I want to see if I can make it work without needed to downgrade the BIOS/bootloader. I suspect this should be possible by patching the ACPI table to add back the proper entry. Admitedly I don't have any experience with that and don't really want to reflash my device now that it's working properly.
 
 
 ### Touchpad driver
