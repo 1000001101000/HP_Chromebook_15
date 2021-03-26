@@ -34,10 +34,10 @@ some additional features of the graphics card can be utilized if you install add
 It appears that they removed support for the keyboard backlight in the bootloader/BIOS somewhere around ChromeOS 77, even when it was supported I wasn't able to find any way to adjust it within Chrome OS.
 
 I was able to make it work on my device by: 
-- downloading a ChromeOS recovery image from https://cros-updates-serving.appspot.com
+- downloading a ChromeOS 75 recovery image from https://cros-updates-serving.appspot.com
 - restore ChromeOS using the recovery image (enable debug options when it asks and set a root password).
-- disable network once in ChromeOS so that it doesn't auto-update and restore the current version
-- use alt-F2 (right arrow) to connect to a terminal and disable autoupdates (remove update script from /etc/?) i'm having trouble finding the link I used.
+- before connecting to wifi use alt-F2 (right arrow) to connect to a terminal and log in with the root password you just set
+- disable autoupdates `rm /etc/update_manager.conf` then run chromeos-setdevpassword so that you can run root commands within ChromeOS
 - restart so that you have a session with network that isn't trying to autoupdate.
 - run through the process to enable legacy boot and then install linux as normal
 
@@ -45,8 +45,7 @@ With a working bootloader/BIOS the cros_kbd_led_backlight driver works as design
 
 `echo 50 > "/sys/class/leds/chromeos::kbd_backlight/brightness"`
 
-Eventually I want to see if I can make it work without needed to downgrade the BIOS/bootloader. I suspect this should be possible by patching the ACPI table to add back the proper entry. Admitedly I don't have any experience with that and don't really want to reflash my device now that it's working properly.
-
+I tried dumping the ACPI table from ChromeOS 75's BIOS and using it to override the table from ChromeOS 87 but that didn't help. Looking at a diff of the two tables the defferences between them don't appear to be related to the keyboard backlight anyway. For now downgrading before installing linux is the only solution I'm aware of.
 
 ### Touchpad driver
 The Synaptic and other Xorg input drivers don't work very well with this touchpad (at least not with any settings that I tried). The GalliumOS folks have ported the ChromeOS driver which works much better. 
