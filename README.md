@@ -1,8 +1,9 @@
 # HP_Chromebook_15
-Custom kernel/etc for HP Kaby Lake Chromebook
+Custom kernel/etc for the Intel KabyLake based HP Chromebook 15 (SYNDRA). Much of this likely applies to the other "NAMI" ChromeOS devices.  
 
-I got this device at a discount and am mostly happy with it for the price and am now looking at improving linux support for it however I can. 
+All of this is currently based on booting the device with the stock BIOS with legacy boot firmware from MrChromebox.tech. I have not made any attempt to replace the stock BIOS with the custom EFI image though that is supposedly possible.
 
+This has all targeted Debian Buster but should be applicable to other Linux distrobutions.
 
 ## Things I have done/recommend
 
@@ -29,13 +30,12 @@ This can be corrected by installing the intel-microcode package and rebooting.
 some additional features of the graphics card can be utilized if you install additional firmware blobs (HuC,GuC,dmc). I beleive because I'm using a newer kernel this requires a newer version of the firmware-misc-nonfree which I manually installed from the debian unstable repo.
 
 
-
 ### Keyboard backlight
 It appears that they removed support for the keyboard backlight in the bootloader/BIOS somewhere around ChromeOS 77, even when it was supported I wasn't able to find any way to adjust it within Chrome OS.
 
 I was able to make it work on my device by: 
 - downloading a ChromeOS 75 recovery image from https://cros-updates-serving.appspot.com
-- restore ChromeOS using the recovery image (enable debug options when it asks and set a root password).
+- restore ChromeOS 75 using the recovery image (enable debug options when it asks and set a root password).
 - before connecting to wifi use alt-F2 (right arrow) to connect to a terminal and log in with the root password you just set
 - disable autoupdates `rm /etc/update_manager.conf` then run chromeos-setdevpassword so that you can run root commands within ChromeOS
 - restart so that you have a session with network that isn't trying to autoupdate.
