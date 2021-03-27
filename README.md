@@ -56,7 +56,29 @@ At least in XFCE this appears to remove the touchpad tab from mouse settings. I'
 
 ### Grub menu
 Setting the grub resolution to 1024x768 makes the best use of the screen of the modes available in the Buster version of Grub2
-`GRUB_GFXMODE=1024x768`
+`GRUB_GFXMODE=1024x768` 
+
+###  kexec for faster/remote reboots
+I've been using kexec instead of a normal reboot to speed things up and to avoid the need for pressing CTRL+L at boot. 
+
+To accomplish this I put together a simple script that parses the default kernel/initrd from the GRUB config and re-using the current kernel cmdline:
+
+```
+#!/bin/bash
+
+## requires kexec-tools 
+## /lib/systemd/system-shutdown/kexec.sh
+
+if [ "$1" == "reboot" ]; then
+
+   kernel="$(grep -e ^[[:space:]]*linux /boot/grub/grub.cfg | head -n 1 | awk '{print $2}')"
+   initrd="$(grep initrd /boot/grub/grub.cfg | head -n 1 | awk '{print $2}')"
+
+   kexec -l --initrd=$initrd  --reuse-cmdline $kernel
+   kexec -e
+fi
+```
+
 
 ### keyboard configuration
 The keyboard for this device works well with the "Chromebook" mapping which is available in XFCE and I suspect other window managers as well. 
@@ -74,7 +96,7 @@ For now I've been using suspend to idle if I need to use suspend.
 `echo s2idle > /sys/power/mem_sleep`
 
 ### media keys
-I still need to look at how to make the backlight/etc buttons work (rather than as function keys). I have a triggerhappy script set up to handle the keyboard backlight adjustments but a nott sure if that is the right direction to go.
+I still need to look at how to make the backlight/etc buttons work (rather than as function keys). I have a triggerhappy script set up to handle the keyboard backlight adjustments but a not sure if that is the right direction to go.
 
 ### Sound
 This requires some firmware files you need to extract from a chromos recovery image and probably some additional dev work. I'm not aware of anyone who has successfully done this for this device
