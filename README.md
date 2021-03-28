@@ -26,9 +26,14 @@ https://www.extremetech.com/computing/251499-major-hyper-threading-flaw-can-dest
 
 This can be corrected by installing the intel-microcode package and rebooting.
 
-### intel graphics firmware
+### Intel graphics firmware
 some additional features of the graphics card can be utilized if you install additional firmware blobs (HuC,GuC,dmc). I beleive because I'm using a newer kernel this requires a newer version of the firmware-misc-nonfree which I manually installed from the debian unstable repo.
 
+### Screen "tearing" in videos/etc
+I found the X11 settings recommended by Arch address this nicely.  
+https://wiki.archlinux.org/index.php/intel_graphics#Tearing
+
+There are numerous 60fps tearing test videos on YouTube that help compare settings.
 
 ### Keyboard backlight
 It appears that they removed support for the keyboard backlight in the bootloader/BIOS somewhere around ChromeOS 77, even when it was supported I wasn't able to find any way to adjust it within Chrome OS.
