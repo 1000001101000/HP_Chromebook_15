@@ -60,6 +60,7 @@ GalliumOS and most other sources I've looked at include this setting to avoid cr
 `echo 0 > /sys/power/pm_async`
 
 If "deep" mode isn't work for some reason I found that s2idle worked fairly well though I suspet the power savings aren't as good. 
+
 `echo s2idle > /sys/power/mem_sleep`
 
 ### Keyboard backlight
@@ -73,11 +74,14 @@ I was able to make it work on my device by:
 - restart so that you have a session with network that isn't trying to autoupdate.
 - run through the process to enable legacy boot and then install linux as normal
 
-With a working bootloader/BIOS the cros_kbd_led_backlight driver works as designed. The brightness can be set with:
+With a working bootloader/BIOS the cros_kbd_led_backlight driver works as designed. The brightness can be set manually with:
 
 `echo 50 > "/sys/class/leds/chromeos::kbd_backlight/brightness"`
 
 I tried dumping the ACPI table from ChromeOS 75's BIOS and using it to override the table from ChromeOS 87 but that didn't help. Looking at a diff of the two tables the defferences between them don't appear to be related to the keyboard backlight anyway. For now downgrading before installing linux is the only solution I'm aware of.
+
+I set up a hotkey to set the values using CTRL + the brightness keys using a triggerhappy script. I may move to another method eventually.
+
 
 ### Touchpad driver
 The Synaptic and other Xorg input drivers don't work very well with this touchpad (at least not with any settings that I tried). The GalliumOS folks have ported the ChromeOS driver which works much better. 
@@ -88,6 +92,7 @@ At least in XFCE this appears to remove the touchpad tab from mouse settings. I'
 
 ### Grub menu
 Setting the grub resolution to 1024x768 makes the best use of the screen of the modes available in the Buster version of Grub2
+
 `GRUB_GFXMODE=1024x768` 
 
 ###  kexec for faster/remote reboots
