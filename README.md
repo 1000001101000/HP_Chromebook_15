@@ -78,7 +78,7 @@ With a working bootloader/BIOS the cros_kbd_led_backlight driver works as design
 
 `echo 50 > "/sys/class/leds/chromeos::kbd_backlight/brightness"`
 
-I tried dumping the ACPI table from ChromeOS 75's BIOS and using it to override the table from ChromeOS 87 but that didn't help. Looking at a diff of the two tables the defferences between them don't appear to be related to the keyboard backlight anyway. For now downgrading before installing linux is the only solution I'm aware of.
+I tried dumping the ACPI table from ChromeOS 75's BIOS and using it to override the table from ChromeOS 87 but that didn't help. Looking at a diff of the two tables the defferences between them don't appear to be related to the keyboard backlight anyway. For now downgrading before installing linux is the only solution I'm aware of. I actually only looked at the DSDT table, I've since realized I should look at SSDT as well. At some point I'll take another look.....next time I feel like re-flashing my laptop.
 
 I set up a hotkey to set the values using CTRL + the brightness keys using a triggerhappy script. I may move to another method eventually.
 
