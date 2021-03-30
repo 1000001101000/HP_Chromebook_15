@@ -29,11 +29,38 @@ This can be corrected by installing the intel-microcode package and rebooting.
 ### Intel graphics firmware
 some additional features of the graphics card can be utilized if you install additional firmware blobs (HuC,GuC,dmc). I beleive because I'm using a newer kernel this requires a newer version of the firmware-misc-nonfree which I manually installed from the debian unstable repo.
 
-### Screen "tearing" in videos/etc
-I found the X11 settings recommended by Arch address this nicely.  
-https://wiki.archlinux.org/index.php/intel_graphics#Tearing
+These can then be enabled via some module parameters:
 
-There are numerous 60fps tearing test videos on YouTube that help compare settings.
+/etc/modprobe.d/i915.conf
+`options i915 enable_fbc=1 enable_guc=2`
+
+### Intel Graphics Drivers
+I've seen pretty impressive performance improvements for both video and 3D games (Fallout New Vegas) by setting up the xserver-xorg-video-intel driver. I'm still playing around with different settings but the "TearFree" setting 
+
+`apt-get install xserver-xorg-video-intel`
+
+/etc/X11/xorg.conf.d/intel.conf:
+```
+Section "Device"
+   Identifier  "Intel Graphics"
+   Driver      "intel"
+   Option "TearFree"    "true"
+EndSection
+```
+
+The Arch wiki has lots of good inormation about this:  
+https://wiki.archlinux.org/index.php/intel_graphics
+https://www.x.org/releases/current/doc/man/man4/intel.4.xhtml
+
+
+### Suspend to memory
+The "deep" mode only seems to work when the Intel graphics drivers are used rather than the modeset drivers (see above). 
+
+GalliumOS and most other sources I've looked at include this setting to avoid crashes, I haven't yet tested suspend without it:
+`echo 0 > /sys/power/pm_async`
+
+If "deep" mode isn't work for some reason I found that s2idle worked fairly well though I suspet the power savings aren't as good. 
+`echo s2idle > /sys/power/mem_sleep`
 
 ### Keyboard backlight
 It appears that they removed support for the keyboard backlight in the bootloader/BIOS somewhere around ChromeOS 77, even when it was supported I wasn't able to find any way to adjust it within Chrome OS.
@@ -84,7 +111,6 @@ if [ "$1" == "reboot" ]; then
 fi
 ```
 
-
 ### keyboard configuration
 The keyboard for this device works well with the "Chromebook" mapping which is available in XFCE and I suspect other window managers as well. 
 
@@ -93,12 +119,6 @@ As usual Arch has a good guide describing how to automatically enable numlock:
 https://wiki.archlinux.org/index.php/Activating_numlock_on_bootup
 
 ## Things I am looking into
-
-### Suspend to memory
-This works perfectly using my kernel under GalliumOS but is failing on Debian. I'm having trouble figuring out what the difference is, partly because switching between the two is a pain.
-
-For now I've been using suspend to idle if I need to use suspend. 
-`echo s2idle > /sys/power/mem_sleep`
 
 ### media keys
 I still need to look at how to make the backlight/etc buttons work (rather than as function keys). I have a triggerhappy script set up to handle the keyboard backlight adjustments but a not sure if that is the right direction to go.
@@ -122,7 +142,6 @@ It appeared hdmi audio was set up on GalliuOS, I have not yet checked if that ac
 I may bundle all of the above into a Debian installer image since I've done that on other projects and have experience setting up github CI/CD jobs to keep them updated. I normally wouldn't bother for a non-embedded device like this, but getting a kernel in place that supports the TPM right away is probably worth the hassle. 
 
 Let me know if you have any questions or something to contribute. I don't know if anyone will actually run across this repo or not, I don't plan to promote it unless I discover something interesting (like how to enable the keyboard backlight).
-
 
 
 To enable "legacy" boot to allow custom OS install:
