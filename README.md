@@ -35,7 +35,8 @@ These can then be enabled via some module parameters:
 `options i915 enable_fbc=1 enable_guc=2`
 
 ### Intel Graphics Drivers
-I've seen pretty impressive performance improvements for both video and 3D games (Fallout New Vegas) by setting up the xserver-xorg-video-intel driver. I'm still playing around with different settings but the "TearFree" setting 
+I've seen pretty impressive performance improvements for both video and 3D games (Fallout New Vegas) by setting up the xserver-xorg-video-intel driver. I ran into some minor graphics issues in some gtk applications when using "uxa" and "sna" acceleration, "blt" seems at least as fast as the others and doesn't have that issue (admittedly I don't really understand the difference between them). The "TearFree" options prevents "Tearing" issues which can be easily deomnstrated by any of the 60fps tearing test videos on YouTube.
+
 
 `apt-get install xserver-xorg-video-intel`
 
@@ -45,6 +46,7 @@ Section "Device"
    Identifier  "Intel Graphics"
    Driver      "intel"
    Option "TearFree"    "true"
+   Option "AccelMethod" "blt"
 EndSection
 ```
 
