@@ -1,13 +1,17 @@
 # HP_Chromebook_15
 Custom kernel/etc for the Intel KabyLake based HP Chromebook 15 (SYNDRA). Much of this likely applies to the other "NAMI" ChromeOS devices.  
 
+If this project helps you click the Star at the top of the page to let me know!
+
 All of this is currently based on booting the device with the stock BIOS with legacy boot firmware from MrChromebox.tech. I have not made any attempt to replace the stock BIOS with the custom EFI image though that is supposedly possible.
 
 This has all targeted Debian Buster but should be applicable to other Linux distrobutions.
 
+I'm considering creating pacakges to automate setting some of these up and possibly creating a custom Debian installer image to further automate that process. Let me know if that would be of interest to you, it will probably only reach the top of my todo list if there is interest.
+
 ## Things I have done/recommend
 
-### Kernel with needed drivers
+### Kernel with needed drivers 
 Set up an automated script to build a custom kernel for this device based on Debian's amd64 kernel for Bullseye. So far the only change from Debian's is to enable support for the TPM. Without TPM support the device will automatically reflash the boot loader with the stock version if you allow it to suspend....which can wreck your day. 
 
 To setup my repo add install the kernel:
@@ -144,11 +148,6 @@ Personally, I just use bluetooth audio for now.
 It appeared hdmi audio was set up on GalliuOS, I have not yet checked if that actually worked or how to get it working on Debian. 
 
 <br><br><br>
-
-
-I may bundle all of the above into a Debian installer image since I've done that on other projects and have experience setting up github CI/CD jobs to keep them updated. I normally wouldn't bother for a non-embedded device like this, but getting a kernel in place that supports the TPM right away is probably worth the hassle. 
-
-Let me know if you have any questions or something to contribute. I don't know if anyone will actually run across this repo or not, I don't plan to promote it unless I discover something interesting (like how to enable the keyboard backlight).
 
 
 To enable "legacy" boot to allow custom OS install:
