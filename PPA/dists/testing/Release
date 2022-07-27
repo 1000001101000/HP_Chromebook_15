@@ -2,19 +2,19 @@ Origin: 1000001101000
 Label: Chromebook Kernel and Tools
 Suite: testing
 Codename: testing
-Date: Sun, 10 Jul 2022 06:25:46 UTC
+Date: Wed, 27 Jul 2022 06:34:10 UTC
 Architectures: amd64
 Components: main
 Description: Chromebook Kernel and Tools
 MD5Sum:
- a44fda032ecf389db35d3ccb55c6f09e 17942 main/binary-amd64/Packages
- 7cd91e23181094f37f6ae5dd417a60a3 4211 main/binary-amd64/Packages.gz
+ 2c8ba41392720e821b87ae05153f3b30 17942 main/binary-amd64/Packages
+ 28874fa55414233a0843549b4925d458 4204 main/binary-amd64/Packages.gz
  a600e0a6c4f06f6db84d2b7aa2fd1613 151 main/binary-amd64/Release
 SHA1:
- f783c1b7b9a6326304789735b0250a50c41a804a 17942 main/binary-amd64/Packages
- 34dd0d6bf043f0fbe4745e9d769a368086684189 4211 main/binary-amd64/Packages.gz
+ 45c5ab3b0ba76f148ba31886f3947af7c118cd71 17942 main/binary-amd64/Packages
+ eecadae216cedc7041b53ba05e9289710a046adb 4204 main/binary-amd64/Packages.gz
  44ed0565a11c802547fa2bc8d605dee11c186847 151 main/binary-amd64/Release
 SHA256:
- bc16e772e330befa5a8b92cf2eb671a6b442a5ef0063210ef4e62c272852a21d 17942 main/binary-amd64/Packages
- a23700798133cfd8e962a0975312b055fdd47e3ac9cfd1195f68e3ceae7d64ce 4211 main/binary-amd64/Packages.gz
+ cbbc69c8b3b6a44679e1d860982a1ae39fea631cffe6f28136fe84acca92dfcf 17942 main/binary-amd64/Packages
+ 5d21a288d0de24650746db1969a20060ec213cd933a99bdcad9d0cda2e1f26e4 4204 main/binary-amd64/Packages.gz
  0625ebe87baf40d0146b70334113983cf843da742b61d69b58b2e39e215b71f9 151 main/binary-amd64/Release
