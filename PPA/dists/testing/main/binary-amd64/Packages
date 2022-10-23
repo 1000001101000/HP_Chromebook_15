@@ -152,18 +152,18 @@ Description: Linux kernel headers for 5.10.140 on amd64
 
 Package: linux-headers-5.10.149
 Source: linux-5.10.149
-Version: 5.10.149-26
+Version: 5.10.149-27
 Architecture: amd64
-Maintainer: root <root@81e81730f839>
+Maintainer: root <root@5cfa70d49003>
 Installed-Size: 49683
 Homepage: https://www.kernel.org/
 Priority: optional
 Section: kernel
-Filename: pool/main/l/linux-5.10.149/linux-headers-5.10.149_5.10.149-26_amd64.deb
-Size: 8109452
-SHA256: 0a8043879a9727a8373631042025f1cfda8c060b4288afb847023f15b09481a4
-SHA1: 6ef3b4dc1c31518fb24b47e7672f1c2b14739933
-MD5sum: b4c746154f5d22bb313df5d59ce1a938
+Filename: pool/main/l/linux-5.10.149/linux-headers-5.10.149_5.10.149-27_amd64.deb
+Size: 8108480
+SHA256: 5d42d41f164c0b2b9be93d15d3191499a0fd095a25c686b8558b4ac5c08998ed
+SHA1: 5efbd6b52b685c67179a320be251f98085ca767f
+MD5sum: 915ba36c4f21c297fa7be9246160c741
 Description: Linux kernel headers for 5.10.149 on amd64
  This package provides kernel header files for 5.10.149 on amd64
  .
@@ -448,18 +448,18 @@ Description: Linux kernel, version 5.10.140
 
 Package: linux-image-5.10.149
 Source: linux-5.10.149
-Version: 5.10.149-26
+Version: 5.10.149-27
 Architecture: amd64
-Maintainer: root <root@81e81730f839>
-Installed-Size: 317325
+Maintainer: root <root@5cfa70d49003>
+Installed-Size: 317324
 Homepage: https://www.kernel.org/
 Priority: optional
 Section: kernel
-Filename: pool/main/l/linux-5.10.149/linux-image-5.10.149_5.10.149-26_amd64.deb
-Size: 54328316
-SHA256: 1dbfbe995746e1f038b00c06c2294528591f468fc0d816a0b1b2b420ed4648e3
-SHA1: 7408fd205b038ed1592dc2bf923a67a37971b96a
-MD5sum: d2c49ad6f274768d60b8382aee8f2e58
+Filename: pool/main/l/linux-5.10.149/linux-image-5.10.149_5.10.149-27_amd64.deb
+Size: 54302164
+SHA256: 50a46437dd4b1a5d017c92e15fd095b8243b7d0db23165065b5400fe0848d558
+SHA1: 3a590bb6d17311ed8b879bfa3d4e9c9f9feb03b2
+MD5sum: 1bc875858e49eb551f43799bad3f68d5
 Description: Linux kernel, version 5.10.149
  This package contains the Linux kernel, modules and corresponding other
  files, version: 5.10.149.
@@ -591,37 +591,37 @@ Description: Linux kernel, version 5.10.92
  files, version: 5.10.92.
 
 Package: linux-image-hp15
-Version: 5.10-26
+Version: 5.10-27
 Architecture: amd64
-Maintainer: Equivs Dummy Package Generator <root@81e81730f839>
+Maintainer: Equivs Dummy Package Generator <root@5cfa70d49003>
 Installed-Size: 9
 Depends: linux-image-5.10.149
 Multi-Arch: foreign
 Priority: optional
 Section: misc
-Filename: pool/main/l/linux-image-hp15/linux-image-hp15_5.10-26_amd64.deb
-Size: 2216
-SHA256: 9c3891acc7c90d9a7c843a2c7a0435545655fc34cdc642c1cdfa91d4aa99232d
-SHA1: 61be1021dc98e3e2c64559d9e3957bd51dc5450b
-MD5sum: 4d00e0d90d00dc59c78686498ff5adaf
+Filename: pool/main/l/linux-image-hp15/linux-image-hp15_5.10-27_amd64.deb
+Size: 2208
+SHA256: 41c4d4738d02a234a9e5f805ee61cde99d1179c4a143ea168203124909bbfc6b
+SHA1: 0028cae5f5763d9653f9c8fa4cbdc548e4fed2ed
+MD5sum: a2a822a41b2ec517c5af0ff8eb0b70cb
 Description: linux-image metapackage for custom kernels for Kaby Lake Chromebooks
 
 Package: linux-libc-dev
 Source: linux-5.10.149
-Version: 5.10.149-26
+Version: 5.10.149-27
 Architecture: amd64
-Maintainer: root <root@81e81730f839>
+Maintainer: root <root@5cfa70d49003>
 Installed-Size: 5903
 Provides: linux-kernel-headers
 Multi-Arch: same
 Homepage: https://www.kernel.org/
 Priority: optional
 Section: devel
-Filename: pool/main/l/linux-5.10.149/linux-libc-dev_5.10.149-26_amd64.deb
-Size: 1136368
-SHA256: e4bf4ee0a0018e92ac48f5f8a8b923b9dc0914d92c8c5236a97717cccee856a5
-SHA1: e45419a0cbc9c448e6e74b21be6dfe69107781b1
-MD5sum: 2b52de2bc727b3cf615553f623704dff
+Filename: pool/main/l/linux-5.10.149/linux-libc-dev_5.10.149-27_amd64.deb
+Size: 1136424
+SHA256: 6d9fc9d1840eba805d6117397abbe45be0443d3ee8af1e3605d39fd482ba6bdc
+SHA1: e8483d5d1a1abeb654039484213510406b0bcd8a
+MD5sum: ccf9fbe23b6576b031961ab79d3ca25c
 Description: Linux support headers for userspace development
  This package provides userspaces headers from the Linux kernel.  These headers
  are used by the installed headers for GNU glibc and other system libraries.
