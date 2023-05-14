@@ -36,6 +36,25 @@ Description: Linux kernel headers for 5.10.178 on amd64
  .
  This is useful for people who need to build external modules
 
+Package: linux-headers-5.10.179
+Source: linux-5.10.179
+Version: 5.10.179-31
+Architecture: amd64
+Maintainer: root <root@f48f23344e70>
+Installed-Size: 49723
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.10.179/linux-headers-5.10.179_5.10.179-31_amd64.deb
+Size: 8119908
+SHA256: 8f116a4d0e944a991ebf3992b4e3e2d085469cdd47cd18d7aeff2831f6c4629d
+SHA1: de4121af5f2432d8213fc7803c9eabd037a11cb4
+MD5sum: 482c6c6ab2277847909454e144e9b239
+Description: Linux kernel headers for 5.10.179 on amd64
+ This package provides kernel header files for 5.10.179 on amd64
+ .
+ This is useful for people who need to build external modules
+
 Package: linux-image-5.10.162
 Source: linux-5.10.162
 Version: 5.10.162-29
@@ -72,38 +91,56 @@ Description: Linux kernel, version 5.10.178
  This package contains the Linux kernel, modules and corresponding other
  files, version: 5.10.178.
 
-Package: linux-image-hp15
-Version: 5.10-30
+Package: linux-image-5.10.179
+Source: linux-5.10.179
+Version: 5.10.179-31
 Architecture: amd64
-Maintainer: Equivs Dummy Package Generator <root@5638ef57f9e6>
+Maintainer: root <root@f48f23344e70>
+Installed-Size: 317564
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.10.179/linux-image-5.10.179_5.10.179-31_amd64.deb
+Size: 54396356
+SHA256: bbe0d39383269437068d1a610ab8355bc4138b53313b08f4aac19d20ad9eed91
+SHA1: 4144eada9c717d8c37500036f18f6c595663fa6d
+MD5sum: 665a1ab62165f175c66fb8a73152dd23
+Description: Linux kernel, version 5.10.179
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.10.179.
+
+Package: linux-image-hp15
+Version: 5.10-31
+Architecture: amd64
+Maintainer: Equivs Dummy Package Generator <root@f48f23344e70>
 Installed-Size: 9
-Depends: linux-image-5.10.178
+Depends: linux-image-5.10.179
 Multi-Arch: foreign
 Priority: optional
 Section: misc
-Filename: pool/main/l/linux-image-hp15/linux-image-hp15_5.10-30_amd64.deb
+Filename: pool/main/l/linux-image-hp15/linux-image-hp15_5.10-31_amd64.deb
 Size: 2212
-SHA256: ea11626c2d9b90a6c5b8767eb29e779f51f8fc22098a02d0e3b8f865899c5968
-SHA1: 297e8bdd6ccf7722619b0eb4fbd2994c8ef1d196
-MD5sum: 29d03056730735d80b75228b783d5687
+SHA256: 2c8e465450ab791df3c12034d58247e99f52eb82ea10a46d18addf1ff9a7fef1
+SHA1: 88240553fa65182a62b51e9631302cae60555c2a
+MD5sum: c81e91b3621283c56af9e3663f58958f
 Description: linux-image metapackage for custom kernels for Kaby Lake Chromebooks
 
 Package: linux-libc-dev
-Source: linux-5.10.178
-Version: 5.10.178-30
+Source: linux-5.10.179
+Version: 5.10.179-31
 Architecture: amd64
-Maintainer: root <root@5638ef57f9e6>
+Maintainer: root <root@f48f23344e70>
 Installed-Size: 5908
 Provides: linux-kernel-headers
 Multi-Arch: same
 Homepage: https://www.kernel.org/
 Priority: optional
 Section: devel
-Filename: pool/main/l/linux-5.10.178/linux-libc-dev_5.10.178-30_amd64.deb
-Size: 1137796
-SHA256: 5d2ead45fd32e2a5f188bc550f63bfb252157df5d24b574c43f6e17778b56c97
-SHA1: f5239a798b3a5d836832f227e3ebaed4f8542e19
-MD5sum: 52c4bc1c4ae9bbef64c53ca2cdf19044
+Filename: pool/main/l/linux-5.10.179/linux-libc-dev_5.10.179-31_amd64.deb
+Size: 1137884
+SHA256: 73f2ff26f37c2fa45d0d965f17494279c74d166cef38c3c0e0f39c26eb6a35c1
+SHA1: 8f91a92cee17c8e2bc613e375b696f79a7cebe21
+MD5sum: bee6315e9b92ffd8879f3a9b687126dc
 Description: Linux support headers for userspace development
  This package provides userspaces headers from the Linux kernel.  These headers
  are used by the installed headers for GNU glibc and other system libraries.
